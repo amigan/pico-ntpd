@@ -3,6 +3,13 @@
 #define common_h
 
 
+#define PLL_SYS_POSTDIV1 6
+#define PLL_SYS_POSTDIV2 1
+#define PLL_SYS_VCO_FREQ_HZ (1500 * MHZ)
+
+#define PLL_USB_POSTDIV1 5
+#define PLL_USB_POSTDIV2 5
+#define PLL_USB_VCO_FREQ_HZ (1200 * MHZ)
 
 
 #define FAMILY_RP2040

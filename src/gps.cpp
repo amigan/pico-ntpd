@@ -233,6 +233,7 @@ void GPS::process()
     
     if(_buf_idx > 1 && _buf[_buf_idx] == (char) '\n'){
         //We have a full NMEA sentence to parse.
+	printf("NMEA %s type %d\n", _buf, minmea_sentence_id(_buf, false));
 
         switch (minmea_sentence_id(_buf, false)) {
             case MINMEA_SENTENCE_RMC: {
@@ -245,7 +246,9 @@ void GPS::process()
                         _valid = true;
 
                         printf("VALID | %s | PPS (%" PRIu64 " uS), PPStoNMEA (%" PRIu64 " uS)\n", time_to_str(&_nmea_timestamp), (_pps_timestamp_us-_pps_timestamp_us_prev), (_nmea_timestamp_us-_pps_timestamp_us));
-                    }
+                    } else {
+			    printf("frame invalid\n");
+		    }
                 }
             } break;
 

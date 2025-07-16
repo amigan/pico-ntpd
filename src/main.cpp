@@ -3,9 +3,9 @@
 #include "lwipopts.h"
 
 #include "bsp/board.h"
-#include "tusb.h"
 
 #include "net.h"
+#include "tusb.h"
 #include "gps.h"
 #include "ntp.h"
 
@@ -15,6 +15,8 @@
 #include "pico/async_context_poll.h"
 #include "pico/lwip_nosys.h"
 #include "pico/multicore.h"
+
+#include "hardware/clocks.h"
 
 
 #ifdef REF_CLOCK_10MHZ

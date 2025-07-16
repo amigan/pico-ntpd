@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 include(pico_sdk_import.cmake)
 project(rp2040-ntp-server)
-
+add_definitions(-Dtimegm=mktime)
 pico_sdk_init()
 
 add_executable(rp2040-ntp-server
